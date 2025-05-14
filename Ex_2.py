@@ -14,7 +14,7 @@ import networkx as nx
 plt.style.use('seaborn-v0_8-paper')
 sns.set_palette("husl")
 
-df = pd.read_csv('Data.csv', header=0)
+df = pd.read_csv('data.csv', header=0)
 
 
 def clean_text(text):
