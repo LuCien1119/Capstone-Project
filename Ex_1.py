@@ -15,7 +15,6 @@ import multiprocessing
 from scipy.special import kl_div
 
 
-# 解决多进程警告
 def set_multiprocessing():
     multiprocessing.freeze_support()
     if __name__ == '__main__':
@@ -124,7 +123,6 @@ def find_optimal_topics(X, texts, dictionary, min_topics=5, max_topics=20):
     return metrics
 
 
-# 新增可视化函数
 def visualize_topic_metrics(metrics):
     plt.figure(figsize=(15, 10))
 
