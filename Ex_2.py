@@ -22,10 +22,10 @@ def clean_text(text):
         return ""
 
     text = re.sub(r'\S+@\S+', '', text)
-    text = re.sub(r'@\w+', '', text)  # 移除@提及
+    text = re.sub(r'@\w+', '', text)
     text = re.sub(r'http\S+|www\S+|https\S+', '', text)
-    text = re.sub(r'\d{10,}', '', text)  # 移除长数字（如电话号码）
-    text = re.sub(r'[^\w\s]', '', text)  # 移除非字母数字字符
+    text = re.sub(r'\d{10,}', '', text)
+    text = re.sub(r'[^\w\s]', '', text)
     text = re.sub(r'&amp;', '', text)
 
     tokens = word_tokenize(text.lower())
@@ -99,7 +99,7 @@ feature_names = vectorizer.get_feature_names_out()
 def plot_topic_barcharts(model, feature_names, n_top_words=5, figsize=(10, 15), bar_height=0.5):
     plt.figure(figsize=figsize)
 
-    n_topics = model.components_.shape[0]  # 获取实际主题数量
+    n_topics = model.components_.shape[0]
 
     for topic_idx, topic in enumerate(model.components_):
         top_features_ind = topic.argsort()[:-n_top_words - 1:-1]
